@@ -1,7 +1,7 @@
 <header>
     <div class="header-top">
         <div class="container">
-            <a href="#">dc power visa</a>
+            <a href="#">dc power visa &reg;</a>
             <a href="#">additional dc sites</a>
         </div>
     </div>
