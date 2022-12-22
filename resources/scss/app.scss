@@ -279,3 +279,40 @@ header {
     }
 }
 // Fine HOME
+
+// Inizio CHARACTER CARD
+.info-card {
+    .container.info {
+        width: 50%;
+    }
+    .current-card {
+        height: 80px;
+        background-color: $primary-color;
+        position: relative;
+        img {
+            position: absolute;
+            bottom: 20px;
+        }
+    }
+    .top-info {
+        background-color: white;
+        .top {
+            display: flex;
+            padding: 3rem 0;
+            h3 {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+            }
+        }
+        .col-left {
+            width: 70%;
+        }
+        .col-right {
+            width: 30%;
+        }
+    }
+    .bottom-info {
+        background-color: #f6f6f6;
+    }
+}
+// Fine CHARACTER CARD
