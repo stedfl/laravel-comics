@@ -3,6 +3,7 @@
 @use 'partials/mixin' as *;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+// Inizio GENERAL
 * {
   padding: 0;
   margin: 0;
@@ -30,6 +31,7 @@ ul {
 a {
   text-decoration: none;
 }
+// Fine GENERAL
 
 // Inizio HEADER
 header {

@@ -8,7 +8,8 @@
     <!-- Styles -->
     @vite('resources/js/app.js')
 
-    <title>DC Comics</title>
+    <link rel='icon shortcut' href='{{asset('img/favicon.ico')}}' type="image/x-icon">
+    <title>DC Comics @yield('title')</title>
 </head>
 <body>
     @include('partials.header')

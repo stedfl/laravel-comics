@@ -6,25 +6,25 @@
                     <ul>
                         <h3>dc comics</h3>
                         <li>
-                            <a href="#">charactes</a>
+                            <a href="{{route('characters')}}">charactes</a>
                         </li>
                         <li>
-                            <a href="#">comics</a>
+                            <a href="{{route('home')}}">comics</a>
                         </li>
                         <li>
-                            <a href="#">movies</a>
+                            <a href="{{route('movies')}}">movies</a>
                         </li>
                         <li>
-                            <a href="#">tv</a>
+                            <a href="{{route('tv')}}">tv</a>
                         </li>
                         <li>
-                            <a href="#">games</a>
+                            <a href="{{route('games')}}">games</a>
                         </li>
                         <li>
-                            <a href="#">videos</a>
+                            <a href="{{route('videos')}}">videos</a>
                         </li>
                         <li>
-                            <a href="#">news</a>
+                            <a href="{{route('news')}}">news</a>
                         </li>
                     </ul>
                     <ul>
