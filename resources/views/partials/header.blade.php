@@ -2,7 +2,7 @@
     <div class="header-top">
         <div class="container">
             <a href="#">dc power visa &reg;</a>
-            <a href="#">additional dc sites</a>
+            <a href="#">additional dc sites <span class="chevron">&#x25BC;</span></a>
         </div>
     </div>
     <div class="container nav-bar">
@@ -39,9 +39,13 @@
                     <a class="{{Route::currentRouteName() == 'news' ? 'active' : ''}}" href="{{route('news')}}">news</a>
                 </li>
                 <li >
-                    <a class="{{Route::currentRouteName() == 'shop' ? 'active' : ''}}" href="{{route('shop')}}">shop</a>
+                    <a class="{{Route::currentRouteName() == 'shop' ? 'active' : ''}}" href="{{route('shop')}}">shop <span class="chevron">&#x25BC;</span></a>
                 </li>
             </ul>
         </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <span><i class="fa-solid fa-magnifying-glass icon"></i></span>
+        </div>
     </div>
 </header>

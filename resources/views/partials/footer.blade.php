@@ -96,7 +96,7 @@
                         all site content TM and &copy; 2020 DC entertainment,
                     </span>
                     unless otherwise <span><a class="link-reserved" href="#">noted here.</a></span>
-                    all right reserved.
+                    All right reserved.
                     <span>
                         <a class="link-reserved capitalize" href="#">cookies setting</a>
                     </span>

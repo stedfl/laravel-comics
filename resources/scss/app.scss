@@ -36,6 +36,9 @@ a {
 // Inizio HEADER
 header {
     background-color: white;
+    .chevron {
+        font-size: 0.5rem;
+      }
     .header-top {
         @include centerFlex('vertical');
         background-color: $primary-color;
@@ -49,6 +52,7 @@ header {
     }
     .container.nav-bar {
       @include betweenFlex;
+
     }
     a {
         text-transform: uppercase;
@@ -63,13 +67,28 @@ header {
           display: inline-block;
           margin-left: 2rem;
           padding: 3rem 0;
-          color: #464646;
+          color: $menu-color;
           font-size: 0.8rem;
           &.active {
             border-bottom: 4px solid $primary-color;
             color: $primary-color;
 
           }
+        }
+    }
+    .search-bar {
+        border-bottom: 2px solid $primary-color;
+        padding-bottom: 4px;
+        input {
+            width: 100px;
+            border: 0;
+            margin-right: 5px;
+        }
+        ::placeholder,
+        .icon {
+            color: darken($menu-color, 100%);
+            font-weight: 700;
+            text-align: right;
         }
     }
   }
@@ -99,8 +118,8 @@ header {
       .left {
             width: 55%;
             height: 100%;
-            a,
-            .reserved-text:not(.reserved-text .link-reserved) {
+            a:not(.link-reserved),
+            .reserved-text:not(.link-reserved) {
                 color:$footer-color;
                 font-size: 0.8rem;
                 font-weight: 400;
