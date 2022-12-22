@@ -233,5 +233,30 @@ header {
           object-position: top;
         }
     }
+    .buy-bar {
+        background-color: $primary-color;
+        ul,
+        li {
+          @include centerFlex()
+        }
+        li {
+          padding: 3rem 2.3rem;
+        }
+        .buy-card {
+          height: 55px;
+          width: 50px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        a {
+          text-transform: uppercase;
+          color: white;
+          margin-left: 1rem;
+          font-size: 0.9rem;
+        }
+    }
 }
 // Fine HOME
