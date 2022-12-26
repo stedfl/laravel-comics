@@ -3,93 +3,23 @@
         <div class="container">
             <div class="left">
                 <nav>
-                    <ul>
-                        <h3>dc comics</h3>
-                        <li>
-                            <a href="{{route('characters')}}">charactes</a>
-                        </li>
-                        <li>
-                            <a href="{{route('home')}}">comics</a>
-                        </li>
-                        <li>
-                            <a href="{{route('movies')}}">movies</a>
-                        </li>
-                        <li>
-                            <a href="{{route('tv')}}">tv</a>
-                        </li>
-                        <li>
-                            <a href="{{route('games')}}">games</a>
-                        </li>
-                        <li>
-                            <a href="{{route('videos')}}">videos</a>
-                        </li>
-                        <li>
-                            <a href="{{route('news')}}">news</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <h3>shop</h3>
-                        <li>
-                            <a href="#">shop DC</a>
-                        </li>
-                        <li>
-                            <a href="#">shop DC collectibles</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <h3>dc</h3>
-                        <li>
-                            <a href="#">terms of use</a>
-                        </li>
-                        <li>
-                            <a href="#">privacy policy(new)</a>
-                        </li>
-                        <li>
-                            <a href="#">ad choices</a>
-                        </li>
-                        <li>
-                            <a href="#">advertising</a>
-                        </li>
-                        <li>
-                            <a href="#">jobs</a>
-                        </li>
-                        <li>
-                            <a href="#">subscriptions</a>
-                        </li>
-                        <li>
-                            <a href="#">talent workshops</a>
-                        </li>
-                        <li>
-                            <a href="#">CPSC certificates</a>
-                        </li>
-                        <li>
-                            <a href="#">ratings</a>
-                        </li>
-                        <li>
-                            <a href="#">shop help</a>
-                        </li>
-                        <li>
-                            <a href="#">contact us</a>
-                        </li>
-                    </ul>
-                    <ul>
-                        <h3>sites</h3>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">MAD magazine</a>
-                        </li>
-                        <li>
-                            <a href="#">DC kids</a>
-                        </li>
-                        <li>
-                            <a href="#">DC universe</a>
-                        </li>
-                        <li>
-                            <a href="#">DC powervisa</a>
-                        </li>
-                    </ul>
+                    @foreach (config('db.footerMenu') as $itemMenu )
+                        <ul>
+                            <h3>{{$itemMenu['title']}}</h3>
+                            @foreach ($itemMenu['items'] as $item )
+                                <li>
+                                    <a href="
+                                    @if ($item['routeName'] === '#')
+                                        {{$item['routeName']}}
+                                    @else
+                                        {{route($item['routeName'])}}
+                                    @endif
+                                    "
+                                    >{{$item['text']}}</a>
+                                </li>  
+                            @endforeach
+                        </ul>
+                    @endforeach
                 </nav>
                 <p class="reserved-text">
                     <span class="capitalize">
@@ -114,31 +44,13 @@
             <div class="social-icons">
                 <a class="follow" href="#">follow us</a>
                 <ul>
-                    <li>
-                        <a href="">
-                            <img src="{{Vite::asset('resources/img/footer-facebook.png')}}" alt="facebook logo">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="{{Vite::asset('resources/img/footer-twitter.png')}}" alt="twitter logo">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="{{Vite::asset('resources/img/footer-youtube.png')}}" alt="youtube logo">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="{{Vite::asset('resources/img/footer-pinterest.png')}}" alt="pinterest logo">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <img src="{{Vite::asset('resources/img/footer-periscope.png')}}" alt="periscope logo">
-                        </a>
-                    </li>
+                    @foreach (config('db.footerSocial') as $item )
+                        <li>
+                            <a href="#">
+                                <img src="{{Vite::asset('resources/img/'.$item['pathImage'])}}" alt="{{$item['name']}}">
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
             </div>
         </div>
