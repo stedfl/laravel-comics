@@ -19,10 +19,12 @@ Route::get('/', function () {
     return view('home', compact('comics', 'menuBuy'));
 })->name('home');
 
-Route::get('/character', function() {
-    $menuBuy = config('db.menuBuyCharacter');
-    return view('characterCard', compact('menuBuy'));
-})->name('character');
+Route::get('/character-details/{id}', function($id) {
+    $comics = config('db.comics'); 
+    $comic_filtered = array_filter($comics, fn($item) => $item['id'] == $id);
+    $comic_get = array_pop($comic_filtered);
+    return view('characterCard', compact('comic_get'));
+})->name('character-details');
 
 Route::get('/characters', function() {
     return view('characters');

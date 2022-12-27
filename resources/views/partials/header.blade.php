@@ -7,7 +7,7 @@
     </div>
     <div class="container nav-bar">
         <div class="logo">
-            <img src="{{asset('img/dc-logo.png')}}" alt="logo Dc" />
+            <a href="{{route('home')}}"><img src="{{asset('img/dc-logo.png')}}" alt="logo Dc" /></a>
         </div>
         <nav>
             <ul>
