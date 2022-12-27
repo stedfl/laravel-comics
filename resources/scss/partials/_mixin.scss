@@ -12,8 +12,13 @@
  
 };
 
-@mixin betweenFlex {
+@mixin betweenFlexCenter {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@mixin betweenFlex {
+  display: flex;
+  justify-content: space-between;
 }

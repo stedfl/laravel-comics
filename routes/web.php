@@ -20,7 +20,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/character', function() {
-    return view('characterCard');
+    $menuBuy = config('db.menuBuyCharacter');
+    return view('characterCard', compact('menuBuy'));
 })->name('character');
 
 Route::get('/characters', function() {

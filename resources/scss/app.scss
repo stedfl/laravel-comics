@@ -1,7 +1,6 @@
-
-@use 'partials/variables' as *;
-@use 'partials/mixin' as *;
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@use "partials/variables" as *;
+@use "partials/mixin" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 // Inizio GENERAL
 * {
@@ -11,7 +10,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 img {
@@ -35,284 +34,370 @@ a {
 
 // Inizio HEADER
 header {
-    background-color: white;
-    .chevron {
-        font-size: 0.5rem;
-      }
-    .header-top {
-        @include centerFlex('vertical');
-        background-color: $primary-color;
-        height: 25px;
-        text-align: end;
-        a {
-            color: white;
-            margin-left: 3rem;
-            font-size: 0.8rem;
-        }
-    }
-    .container.nav-bar {
-      @include betweenFlex;
-
-    }
+  background-color: white;
+  .chevron {
+    font-size: 0.5rem;
+  }
+  .header-top {
+    @include centerFlex("vertical");
+    background-color: $primary-color;
+    height: 25px;
+    text-align: end;
     a {
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-    img {
-      width: 80px;
-    }
-    ul {
-        display: flex;
-        a {
-          display: inline-block;
-          margin-left: 2rem;
-          padding: 3rem 0;
-          color: $menu-color;
-          font-size: 0.8rem;
-          &.active {
-            border-bottom: 4px solid $primary-color;
-            color: $primary-color;
-
-          }
-        }
-    }
-    .search-bar {
-        border-bottom: 2px solid $primary-color;
-        padding-bottom: 4px;
-        input {
-            width: 100px;
-            border: 0;
-            margin-right: 5px;
-        }
-        ::placeholder,
-        .icon {
-            color: darken($menu-color, 100%);
-            font-weight: 700;
-            text-align: right;
-        }
+      color: white;
+      margin-left: 3rem;
+      font-size: 0.8rem;
     }
   }
+  .container.nav-bar {
+    @include betweenFlexCenter;
+  }
+  a {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  img {
+    width: 80px;
+  }
+  ul {
+    display: flex;
+    a {
+      display: inline-block;
+      margin-left: 2rem;
+      padding: 3rem 0;
+      color: $menu-color;
+      font-size: 0.8rem;
+      &.active {
+        border-bottom: 4px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+  .search-bar {
+    border-bottom: 2px solid $primary-color;
+    padding-bottom: 4px;
+    input {
+      width: 100px;
+      border: 0;
+      margin-right: 5px;
+    }
+    ::placeholder,
+    .icon {
+      color: darken($menu-color, 100%);
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+}
 // Fine HEADER
 
 // Inizio JUMBOTRON
 .jumbotron {
+  width: 100%;
+  height: 400px;
+  img {
     width: 100%;
-    height: 400px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position:top;
-    }
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 // Fine JUMBOTRON
 
 // Inizio FOOTER
 .footer-menu {
-    overflow: hidden;
-    height: 390px;
-    background-image: url('../img/footer-bg.jpg');
-    .container {
-      display: flex;
+  overflow: hidden;
+  height: 390px;
+  background-image: url("../img/footer-bg.jpg");
+  .container {
+    display: flex;
+    height: 100%;
+    .left {
+      width: 55%;
       height: 100%;
-      .left {
-            width: 55%;
-            height: 100%;
-            a:not(.link-reserved),
-            .reserved-text:not(.link-reserved) {
-                color:$footer-color;
-                font-size: 0.8rem;
-                font-weight: 400;
-            }
-        }
+      a:not(.link-reserved),
+      .reserved-text:not(.link-reserved) {
+        color: $footer-color;
+        font-size: 0.8rem;
+        font-weight: 400;
+      }
     }
+  }
 }
 
 .left nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 80%;
-    width: 60%;
-    margin-top: 2rem;
-    ul {
-        margin-top: 1rem;
-        h3 {
-        color: white;
-        text-transform: uppercase;
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
-        }
-        li {
-            margin: 0.1rem 0;
-            a {
-                text-transform: capitalize;
-            }
-        }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80%;
+  width: 60%;
+  margin-top: 2rem;
+  ul {
+    margin-top: 1rem;
+    h3 {
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
     }
+    li {
+      margin: 0.1rem 0;
+      a {
+        text-transform: capitalize;
+      }
+    }
+  }
 }
 
 .reserved-text {
-    width: 80%;
-    .capitalize {
-        text-transform: capitalize;
-    }
-    .link-reserved  {
-        color: $primary-color;
-    }
+  width: 80%;
+  .capitalize {
+    text-transform: capitalize;
+  }
+  .link-reserved {
+    color: $primary-color;
+  }
 }
 
 .right {
-    width: 45%;
-    img {
-        transform: translateY(-18%);
-    }
+  width: 45%;
+  img {
+    transform: translateY(-18%);
+  }
 }
 
 .footer-social {
-    background-color: #303030;
-    padding: 2.5rem 0;
-    font-weight: 700;
-    text-transform: uppercase;
-    .container {
-        @include betweenFlex;
-        button  {
-        background-color: transparent;
-        padding: 1rem;
-        border: 2px solid $primary-color;
-        color: white;
-        font-size: 1rem;
-        text-transform: uppercase;
-        cursor: pointer;
-        }
+  background-color: #303030;
+  padding: 2.5rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  .container {
+    @include betweenFlexCenter;
+    button {
+      background-color: transparent;
+      padding: 1rem;
+      border: 2px solid $primary-color;
+      color: white;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
     }
+  }
 }
 .social-icons {
-    display: flex;
-    align-items: center;
-    .follow {
+  display: flex;
+  align-items: center;
+  .follow {
     color: $primary-color;
     font-size: 1.3rem;
-    }
-    ul {
+  }
+  ul {
     display: flex;
     margin-left: 0.5rem;
-        li {
-            margin-left: 1.2rem;
-        }
+    li {
+      margin-left: 1.2rem;
     }
+  }
 }
 // Fine FOOTER
 
 // Inizio HOME
 .home {
-    background-color: #1c1c1c;
-    .container {
-        position: relative;
-      }
-    .current {
-        font-size: 1.6rem;
-        position: absolute;
-        bottom:95%;
-        padding: 1rem 1.3rem;
-    }
-    .current,
-    button {
+  background-color: #1c1c1c;
+  .container {
+    position: relative;
+  }
+  .current {
+    font-size: 1.6rem;
+    position: absolute;
+    bottom: 95%;
+    padding: 1rem 1.3rem;
+  }
+  .current,
+  button {
+    color: white;
+    background-color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  button {
+    padding: 1rem 4rem;
+    border: 0;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 4rem 0 2rem;
+  }
+  .card {
+    flex-basis: calc(100% / 6 - 1.2rem);
+    margin-bottom: 2rem;
+    h3 {
       color: white;
-      background-color: $primary-color;
+      margin-top: 1rem;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 400;
+      font-size: 0.9rem;
     }
-    button {
-        padding: 1rem 4rem;
-        border: 0;
-        margin-top: 1rem;
-        cursor: pointer;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 200px;
+      object-position: top;
     }
-    .cards {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        padding: 4rem 0 2rem;
+  }
+  .buy-bar {
+    background-color: $primary-color;
+    ul,
+    li {
+      @include centerFlex();
     }
-    .card {
-        flex-basis: calc(100% / 6 - 1.2rem);
-        margin-bottom: 2rem;
-        h3 {
-            color: white;
-            margin-top: 1rem;
-            text-transform: uppercase;
-            font-weight: 400;
-            font-size: 0.9rem;
-        }
-        img {
-          object-fit: cover;
-          width: 100%;
-          height: 200px;
-          object-position: top;
-        }
+    li {
+      padding: 3rem 2.3rem;
     }
-    .buy-bar {
-        background-color: $primary-color;
-        ul,
-        li {
-          @include centerFlex()
-        }
-        li {
-          padding: 3rem 2.3rem;
-        }
-        .buy-card {
-          height: 55px;
-          width: 50px;
-        }
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-        a {
-          text-transform: uppercase;
-          color: white;
-          margin-left: 1rem;
-          font-size: 0.9rem;
-        }
+    .buy-card {
+      height: 55px;
+      width: 50px;
     }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    a {
+      text-transform: uppercase;
+      color: white;
+      margin-left: 1rem;
+      font-size: 0.9rem;
+    }
+  }
 }
 // Fine HOME
 
 // Inizio CHARACTER CARD
 .info-card {
-    .container.info {
-        width: 50%;
+  .container.info {
+    width: 60%;
+    h1, 
+    h2,
+    .title {
+      color: #003f5e;
     }
-    .current-card {
-        height: 80px;
-        background-color: $primary-color;
-        position: relative;
-        img {
-            position: absolute;
-            bottom: 20px;
-        }
+  }
+  .current-card {
+    height: 80px;
+    background-color: $primary-color;
+    position: relative;
+    img {
+      position: absolute;
+      bottom: 20px;
     }
-    .top-info {
-        background-color: white;
-        .top {
-            display: flex;
-            padding: 3rem 0;
-            h3 {
-                font-size: 0.8rem;
-                text-transform: uppercase;
-            }
-        }
-        .col-left {
-            width: 70%;
-        }
-        .col-right {
-            width: 30%;
-        }
+  }
+  .top-info {
+    background-color: white;
+    .top {
+      display: flex;
+      padding: 3rem 0;
+      h1,
+      h3 {
+        text-transform: uppercase;
+      }
+      h1 { 
+        font-size: 1.3rem;
+      }
+      h3 {
+        font-size: 0.8rem;
+        color: #7c828c;
+        text-align: end;
+      }
     }
-    .bottom-info {
-        background-color: #f6f6f6;
+    .col-left {
+      width: 70%;
+      padding-right: 1.6rem;
+      .availability-bar,
+      .price-box {
+        @include betweenFlex;
+      }
+      .availability-bar {
+        color: #9de87e;
+        font-size: 0.8rem;
+        border-bottom: 0.5px solid rgba($color: #000000, $alpha: 0.5);
+        margin: 1rem 0;
+      }
+      .check,
+      .price-box {
+        background-color: #55ba59;
+      }
+      .price-box {
+        width: 70%;
+        border-right: 0.5px solid rgba($color: #000000, $alpha: 0.5);
+        padding: 0.5rem 1rem;
+      }
+      .check,
+      .float {
+        color: white;
+        font-weight: 600;
+      }
+      .check {
+        padding: 0.5rem 1rem;
+        width: 30%;
+        cursor: pointer;
+      }
+      .status {
+        text-transform: uppercase;
+      }
+      .description {
+        color: #686269;
+        font-weight: 400;
+        font-size: 0.75rem;
+        word-spacing: 3px;
+        line-height: 21px;
+      }
     }
+    .col-right {
+      width: 30%;
+    }
+  }
+  .bottom-info {
+    background-color: #f6f6f6;
+    border-top: 1px solid #e3e3e3;
+    .container {
+      @include betweenFlex;
+      align-items: flex-start;
+      padding: 1rem 0 5rem;
+    }
+    .col-right,
+    .col-left {
+      width: 48%;
+    }
+    h2,
+    .row {
+      border-bottom: 1px solid #e3e3e3;
+    }
+    h2 {
+      font-size: 1.1rem;
+      padding-bottom: 1rem;
+    }
+    .row {
+      @include betweenFlex;
+      font-size: 0.7rem;
+      padding: 0.5rem 0;
+      .title {
+        width: 30%;
+      }
+      .list {
+        width: 70%;
+        &.special {
+          color: #19b1df;
+        }
+        &.series {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }
 // Fine CHARACTER CARD
